@@ -12,7 +12,7 @@ def get_neighbours(owner, repo, auth_token):
   repo_user_tuple_set = [r for user in stargazers for r in _map_user_repos(user, auth_token)]
   
   # Reduce the Repo, User tuples using the Repo
-  res = defaultdict(set)
+  res = defaultdict(list)
   for (rep, user) in repo_user_tuple_set:
-   res[rep].add(user)
+   res[rep].append(user)
   return res

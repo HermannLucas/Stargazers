@@ -59,9 +59,9 @@ class TestNeighbours(unittest.TestCase):
     ]
 
     expected_res = {
-      test_repo1: set([test_user1]),
-      test_repo2: set([test_user1, test_user2]),
-      test_repo3: set([test_user1]),
+      test_repo1: [test_user1],
+      test_repo2: [test_user1, test_user2],
+      test_repo3: [test_user1],
     }
 
     res = neighbours.get_neighbours(test_owner, test_request_repo, test_auth_token)
