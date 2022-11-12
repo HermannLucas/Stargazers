@@ -1,11 +1,12 @@
 import unittest
 from unittest.mock import patch
 
-import github
+
+import src.github as github
 
 class TestGithub(unittest.TestCase):
 
-  @patch('github._get_json_resp')
+  @patch('src.github._get_json_resp')
   def test_user_stars(self, mock_get_json_resp):
     test_user = "test_user"
     test_repo_name = "test_repo_name"
@@ -27,7 +28,7 @@ class TestGithub(unittest.TestCase):
     self.assertEqual(expected_resp, resp)
     mock_get_json_resp.assert_called_once_with(expected_url, test_auth_token)
 
-  @patch('github._get_json_resp')
+  @patch('src.github._get_json_resp')
   def test_get_stargazers(self, mock_get_json_resp):
     test_user = "test_user"
     test_repo_name = "test_repo_name"

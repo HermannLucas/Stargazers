@@ -1,10 +1,8 @@
-from flask import Flask
+from src.app import app
 import json
 import os
 
-from neighbours import get_neighbours
-
-app = Flask(__name__)
+from src.neighbours import get_neighbours
 
 @app.route('/repos/<user>/<repo>/starneighbours')
 def get_neighbours_handler(user, repo):

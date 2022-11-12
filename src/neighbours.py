@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from github import get_stars, get_stargazers
+from src.github import get_stars, get_stargazers
 
 def _map_user_repos(user, auth_token):
   return [(f"{repo['owner']}/{repo['name']}", user) for repo in get_stars(user, auth_token)]

@@ -1,11 +1,11 @@
 import unittest
 from unittest.mock import patch
 
-import neighbours
+import src.neighbours as neighbours
 
 class TestNeighbours(unittest.TestCase):
 
-  @patch('neighbours.get_stars')
+  @patch('src.neighbours.get_stars')
   def test_map_user_repos(self, mock_get_stars):
     test_user = "test_user"
     test_auth_token = "test_auth_token"
@@ -29,8 +29,8 @@ class TestNeighbours(unittest.TestCase):
     self.assertEqual(expected_res, res)
     mock_get_stars.assert_called_once_with(test_user, test_auth_token)
 
-  @patch('neighbours._map_user_repos')
-  @patch('neighbours.get_stargazers')
+  @patch('src.neighbours._map_user_repos')
+  @patch('src.neighbours.get_stargazers')
   def test_get_neighbours(self, mock_get_stargazers, mock_map_user_repos):
     test_auth_token = "test_auth_token"
     test_user1 = "test_user1"

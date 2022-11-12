@@ -17,7 +17,7 @@ python -m unittest
 To Start the server do the following:
 ```bash
 pip install -r requirements.txt
-GITHUB_ACCESS_TOKEN=<your-github-access-token> flask --app web run
+GITHUB_ACCESS_TOKEN=<your-github-access-token> flask --app main run
 ```
 
 This will will print some log while it starts the server.
