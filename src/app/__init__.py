@@ -1,5 +1,5 @@
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask('stargazers')
 
 from src.app import views
